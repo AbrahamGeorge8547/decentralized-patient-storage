@@ -11,43 +11,6 @@
 				"type": "constructor"
 			},
 			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "qualification",
-						"type": "string"
-					},
-					{
-						"indexed": false,
-						"internalType": "address",
-						"name": "doctor",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "workplaceIndex",
-						"type": "uint256"
-					}
-				],
-				"name": "DoctorRegistered",
-				"type": "event"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -63,90 +26,6 @@
 				"name": "createWorkplace",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "doctorAddress",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "doctorCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "doctorNotExists",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "doctors",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "qualification",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "doctor",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "workPlace",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -181,7 +60,7 @@
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct MedicalRecords.Doctor[]",
+						"internalType": "struct Doctor.DoctorDetails[]",
 						"name": "",
 						"type": "tuple[]"
 					}
@@ -231,7 +110,7 @@
 								"type": "string[]"
 							}
 						],
-						"internalType": "struct MedicalRecords.Patient[]",
+						"internalType": "struct Patient.PatientDetails[]",
 						"name": "",
 						"type": "tuple[]"
 					}
@@ -246,11 +125,6 @@
 					{
 						"components": [
 							{
-								"internalType": "uint256",
-								"name": "id",
-								"type": "uint256"
-							},
-							{
 								"internalType": "string",
 								"name": "name",
 								"type": "string"
@@ -261,7 +135,7 @@
 								"type": "string"
 							}
 						],
-						"internalType": "struct MedicalRecords.Workplace[]",
+						"internalType": "struct Admin.Workplace[]",
 						"name": "",
 						"type": "tuple[]"
 					}
@@ -271,129 +145,11 @@
 			},
 			{
 				"inputs": [],
-				"name": "medicineCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "medicines",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "expiryDate",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "dose",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "price",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "patientAddress",
+				"name": "owner",
 				"outputs": [
 					{
 						"internalType": "address",
 						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "patientCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "patientNotExists",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "patients",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "age",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "publicAddress",
 						"type": "address"
 					}
 				],
@@ -442,38 +198,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "workplaceCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_workplaceIndex",
-						"type": "uint256"
-					}
-				],
-				"name": "workplaceExists",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -483,11 +207,6 @@
 				],
 				"name": "workplaces",
 				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
 					{
 						"internalType": "string",
 						"name": "name",
@@ -516,7 +235,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"medicalContract2.sol": "MedicalRecords"
+			"MedicalRecords.sol": "MedicalRecords"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -530,11 +249,32 @@
 		"remappings": []
 	},
 	"sources": {
-		"medicalContract2.sol": {
-			"keccak256": "0xb10bb9fdbc721c02fb22b3baa01092850a0739cc67cb83185288b95296146c67",
+		"Admin.sol": {
+			"keccak256": "0xd6f3f37c9b85128e0572c7ea7f89169ed60b6f142e6f4bbc0d1b66ef292f698a",
 			"urls": [
-				"bzz-raw://edcd86ed0623c90394ea382555d37e26a2f95fbacd9a6050e67353528b039fd5",
-				"dweb:/ipfs/QmXELB9kj8TrfjeevuyaZDu7jZHsVnbUCXDahbDQmYN5Gk"
+				"bzz-raw://f8ee90b8c993c31c964b044cf21d8073f20223e219a796e38a37512076f8fb85",
+				"dweb:/ipfs/Qmbj1sAoaKTgpDY4HJ3FgqNVPDVeDfQnM2rA4Lqk3vTyej"
+			]
+		},
+		"Doctor.sol": {
+			"keccak256": "0x73ba74b9bcfe9455bf90e19e3f06399fac4bf557269daa580c92264936223a84",
+			"urls": [
+				"bzz-raw://483f6245101fa437d24b2f1e676432d268e87ce071c851b8de34f61280dd2269",
+				"dweb:/ipfs/QmUQVe2LKc6xkcUdWZeFdRoritRiokr9QsspCxiiBS5oKU"
+			]
+		},
+		"MedicalRecords.sol": {
+			"keccak256": "0x0ff64f85cd72c3546a040b966456478f1815723f1adbdac06870d9d15b675dcb",
+			"urls": [
+				"bzz-raw://c4598204f4d9b8a2978ae6840f8956999cac86a774374ee6a20c6229257e8df1",
+				"dweb:/ipfs/QmR2Tp9wNiNFXxd1wzRpYGvdeAnWqw962zDhKmkyg41QMg"
+			]
+		},
+		"Patient.sol": {
+			"keccak256": "0xb48bf9b6fa06a979b096d18db5a6a1cd258c290051b5574494b7ddc2de179613",
+			"urls": [
+				"bzz-raw://2786cde7c14163976b59c0204a4683d4dae05709a7838fbe42c733929b5809f5",
+				"dweb:/ipfs/QmTyx9J5nJviK22cCskS5ipgXQzeJc7hTWHZ6F3fqZ6MWi"
 			]
 		}
 	},
