@@ -15,30 +15,30 @@ contract Patient {
     uint public patientCount;
     address[] public patientAddress;
 
-    function patientNotExists() public view returns (bool) {
-        for(uint i=0; i<patientCount; i++) {
-            if(patientAddress[i] == msg.sender) {
+    function patientNotExists(address pAddr) public view returns (bool) {
+        for(uint i=0; i<patientAddress.length; i++) {
+            if(patientAddress[i] == pAddr) {
                 return false;
             }
         }
         return true;
     }
 
-    function registerPatient(string memory _name, uint _age) public {
-        require(patientNotExists(), "Patient already exists");
+    function registerPatient(string memory _name, uint _age, address pAddr) public {
+        require(patientNotExists(pAddr), "Patient already exists");
         string[] memory diseases;
         string[] memory prescribedMedicines;
         string[] memory allowedDoctors;
-        patients[msg.sender] = PatientDetails({
+        patients[pAddr] = PatientDetails({
             id: patientCount, 
             name: _name, 
             age: _age, 
-            publicAddress: msg.sender, 
+            publicAddress: pAddr, 
             diseases: diseases, 
             medicines: prescribedMedicines, 
             allowedDoctors: allowedDoctors
         });
-        patientAddress.push(msg.sender);
+        patientAddress.push(pAddr);
         patientCount++;
     }
 
@@ -48,5 +48,14 @@ contract Patient {
             result[i] = patients[patientAddress[i]];
         }
         return result;
+    }
+
+    function patientAddDisease(address  pAddr, string memory diseaseName) public {
+        patients[pAddr].diseases.push(diseaseName);
+        // for(uint i=0; i<patientCount; i++) {
+        //     if(patientAddress[i] == pAddr) {
+                
+        //     }
+        // }
     }
 }

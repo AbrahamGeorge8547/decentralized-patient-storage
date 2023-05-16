@@ -11,6 +11,47 @@
 						"internalType": "string",
 						"name": "_name",
 						"type": "string"
+					}
+				],
+				"name": "addDisease",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_expiryDate",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_doses",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string",
+						"name": "_price",
+						"type": "string"
+					}
+				],
+				"name": "addMedicine",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -21,6 +62,30 @@
 				"name": "createWorkplace",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "diseases",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -56,7 +121,13 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "dAddr",
+						"type": "address"
+					}
+				],
 				"name": "doctorNotExists",
 				"outputs": [
 					{
@@ -109,6 +180,31 @@
 			},
 			{
 				"inputs": [],
+				"name": "getAllDiseases",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Admin.Disease[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getAllDoctors",
 				"outputs": [
 					{
@@ -149,6 +245,46 @@
 			},
 			{
 				"inputs": [],
+				"name": "getAllMedicines",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "expiryDate",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "price",
+								"type": "string"
+							},
+							{
+								"internalType": "string[]",
+								"name": "doses",
+								"type": "string[]"
+							}
+						],
+						"internalType": "struct Admin.Medicine[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getAllWorkplaces",
 				"outputs": [
 					{
@@ -175,6 +311,59 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getDiseaseById",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "medicines",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "expiryDate",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "price",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_name",
 						"type": "string"
@@ -188,6 +377,11 @@
 						"internalType": "uint256",
 						"name": "_workplaceIndex",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "dAddr",
+						"type": "address"
 					}
 				],
 				"name": "registerDoctor",
@@ -248,17 +442,17 @@
 	},
 	"sources": {
 		"Admin.sol": {
-			"keccak256": "0xd6f3f37c9b85128e0572c7ea7f89169ed60b6f142e6f4bbc0d1b66ef292f698a",
+			"keccak256": "0xdaed2b0aa8476a1c33b6a1b0a7fa8d4a78943d004f6d57eec601b2f5c8935718",
 			"urls": [
-				"bzz-raw://f8ee90b8c993c31c964b044cf21d8073f20223e219a796e38a37512076f8fb85",
-				"dweb:/ipfs/Qmbj1sAoaKTgpDY4HJ3FgqNVPDVeDfQnM2rA4Lqk3vTyej"
+				"bzz-raw://eeebdc9a5d841fb363be15cfa8ced68155a83c6322c8e99849cac8bb0fa3c80e",
+				"dweb:/ipfs/QmbgB6DuAR9Yn8CD5TTeWeKBjV8YE7MnDMaCD8n6wtsmtY"
 			]
 		},
 		"Doctor.sol": {
-			"keccak256": "0x73ba74b9bcfe9455bf90e19e3f06399fac4bf557269daa580c92264936223a84",
+			"keccak256": "0x349e9ba58a75fb92fef8687e89a9b79b2a318e142d5c7bd61cd7240607f78324",
 			"urls": [
-				"bzz-raw://483f6245101fa437d24b2f1e676432d268e87ce071c851b8de34f61280dd2269",
-				"dweb:/ipfs/QmUQVe2LKc6xkcUdWZeFdRoritRiokr9QsspCxiiBS5oKU"
+				"bzz-raw://602bc76b1a59fb2bbdab264e163c465da3f94afbc5c79ec3f3f2e420da7f6676",
+				"dweb:/ipfs/QmVVART3hATVQfp4Pw4YD5WPxccCa7UhAG9HHueCXkURSz"
 			]
 		}
 	},

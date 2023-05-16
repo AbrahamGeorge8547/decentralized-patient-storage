@@ -15,19 +15,19 @@ contract Doctor is Admin {
     uint public doctorCount;
     address[] public doctorAddress;
 
-    function doctorNotExists() public view returns (bool) {
+    function doctorNotExists(address dAddr) public view returns (bool) {
         for(uint i=0; i<doctorCount; i++) {
-            if(doctorAddress[i] == msg.sender) {
+            if(doctorAddress[i] == dAddr) {
                 return false;
             }
         }
         return true;
     }
 
-    function registerDoctor(string memory _name, string memory _qualification, uint256 _workplaceIndex) public {
-        require(doctorNotExists(), "Doctor already registered");
-        doctors[msg.sender] = DoctorDetails(doctorCount, _name, _qualification, msg.sender, _workplaceIndex);
-        doctorAddress.push(msg.sender);
+    function registerDoctor(string memory _name, string memory _qualification, uint256 _workplaceIndex, address dAddr) public {
+        require(doctorNotExists(dAddr), "Doctor already registered");
+        doctors[dAddr] = DoctorDetails(doctorCount, _name, _qualification, dAddr, _workplaceIndex);
+        doctorAddress.push(dAddr);
         doctorCount++;
     }
 
