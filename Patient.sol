@@ -1,3 +1,5 @@
+//SPDX-License-Identifier:MIT
+
 pragma solidity ^0.8.18;
 
 contract Patient {
@@ -7,7 +9,7 @@ contract Patient {
         uint age;
         address publicAddress;
         string[] diseases;
-        string[] medicines;
+        uint256[] medicines;
         string[] allowedDoctors;
     }
 
@@ -27,7 +29,7 @@ contract Patient {
     function registerPatient(string memory _name, uint _age, address pAddr) public {
         require(patientNotExists(pAddr), "Patient already exists");
         string[] memory diseases;
-        string[] memory prescribedMedicines;
+        uint256[] memory prescribedMedicines;
         string[] memory allowedDoctors;
         patients[pAddr] = PatientDetails({
             id: patientCount, 
@@ -52,10 +54,9 @@ contract Patient {
 
     function patientAddDisease(address  pAddr, string memory diseaseName) public {
         patients[pAddr].diseases.push(diseaseName);
-        // for(uint i=0; i<patientCount; i++) {
-        //     if(patientAddress[i] == pAddr) {
-                
-        //     }
-        // }
+    }
+
+    function addMedicineToPatient(uint256 id, address pAddr) public {
+        patients[pAddr].medicines.push(id);
     }
 }

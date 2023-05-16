@@ -1,3 +1,5 @@
+//SPDX-License-Identifier:MIT
+
 pragma solidity ^0.8.0;
 
 import "./Admin.sol";
@@ -28,13 +30,10 @@ contract MedicalRecords is Admin {
         return super.getAllWorkplaces();
     }
 
-    function addMedicine(string memory _name, string memory _expiryDate, string[] memory _doses, string memory _price) public onlyAdmin override  {
-        return super.addMedicine(_name, _expiryDate, _doses, _price);
+    function addMedicine(string memory _name, string memory _expiryDate, string memory _dose, string memory _price) public onlyAdmin override  {
+        return super.addMedicine(_name, _expiryDate, _dose, _price);
     }
 
-    function getAllMedicines() public view override returns (Admin.Medicine[] memory) {
-        return super.getAllMedicines();
-    }
 
     function addDisease(string memory _name) public onlyAdmin override {
         return super.addDisease(_name);
@@ -68,4 +67,11 @@ contract MedicalRecords is Admin {
         diseaseName = super.getDiseaseById(id);
         patient.patientAddDisease(msg.sender, diseaseName);
     }
+
+    function addMedicineToPatient(uint256 id, address _patient)  public {
+        require(super.checkMedicineExists(id), "Medicine does not exists");
+        patient.addMedicineToPatient(id, _patient);
+    }
+
+    function getPatientById
 }

@@ -1,3 +1,4 @@
+//SPDX-License-Identifier:MIT
 pragma solidity ^0.8.0;
 
 contract Admin {
@@ -11,7 +12,7 @@ contract Admin {
         string name;
         string expiryDate;
         string price;
-        string[] doses;
+        string dose;
     }
 
     struct Disease {
@@ -21,7 +22,7 @@ contract Admin {
     uint256 medicineCount;
     uint256 diseaseCount; 
     Workplace[] public workplaces;
-    Medicine[] public medicines;
+    mapping(uint256 => Medicine) public medicines;
     Disease[] public diseases;
 
 
@@ -35,21 +36,18 @@ contract Admin {
         return workplaces;
     }
 
-    function addMedicine(string memory _name, string memory _expiryDate, string[] memory _doses, string memory _price) public virtual {
+    function addMedicine(string memory _name, string memory _expiryDate, string memory _dose, string memory _price) public virtual {
         Medicine memory newMedicine = Medicine({
             id: medicineCount,
             name: _name,
             expiryDate: _expiryDate,
             price: _price,
-            doses: _doses
+            dose: _dose
         });
+        medicines[medicineCount] = newMedicine;
         medicineCount++;
-        medicines.push(newMedicine);
     }
 
-    function getAllMedicines() public view virtual returns(Medicine[] memory) {
-        return medicines;
-    }
 
     function addDisease(string memory _name) public virtual {
         Disease memory newDisease = Disease({
@@ -66,6 +64,15 @@ contract Admin {
 
     function getDiseaseById(uint256 id) public view virtual returns(string memory) {
         return diseases[id].name;
+    }
+
+    function checkMedicineExists(uint256 id) public view virtual returns (bool) {
+       return bytes(medicines[id].name).length > 0;
+    }
+
+    function getMedicine(uint256 id) public view returns (string memory name, string memory expiryDate, string memory dose, string memory price) {
+        Medicine memory medicine = medicines[id];
+        return (medicine.name, medicine.expiryDate, medicine.dose, medicine.price);
     }
 
 }

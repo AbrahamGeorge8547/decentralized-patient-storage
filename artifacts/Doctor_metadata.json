@@ -31,9 +31,9 @@
 						"type": "string"
 					},
 					{
-						"internalType": "string[]",
-						"name": "_doses",
-						"type": "string[]"
+						"internalType": "string",
+						"name": "_dose",
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -270,9 +270,9 @@
 								"type": "string"
 							},
 							{
-								"internalType": "string[]",
-								"name": "doses",
-								"type": "string[]"
+								"internalType": "string",
+								"name": "dose",
+								"type": "string"
 							}
 						],
 						"internalType": "struct Admin.Medicine[]",
@@ -355,6 +355,11 @@
 					{
 						"internalType": "string",
 						"name": "price",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "dose",
 						"type": "string"
 					}
 				],
@@ -442,10 +447,10 @@
 	},
 	"sources": {
 		"Admin.sol": {
-			"keccak256": "0xdaed2b0aa8476a1c33b6a1b0a7fa8d4a78943d004f6d57eec601b2f5c8935718",
+			"keccak256": "0x522a1458c567ce255879ab6ccd0025d0aee27af42d15f093dca46d3296ae3efd",
 			"urls": [
-				"bzz-raw://eeebdc9a5d841fb363be15cfa8ced68155a83c6322c8e99849cac8bb0fa3c80e",
-				"dweb:/ipfs/QmbgB6DuAR9Yn8CD5TTeWeKBjV8YE7MnDMaCD8n6wtsmtY"
+				"bzz-raw://b1c294e906d31b5a5b6bc26eb23c0bcabbba76e5057bfa7025bfb88a24c00191",
+				"dweb:/ipfs/QmTD1HazmSYQ9qKe4aeKqF6QQHDNDu8wdPYCD1hitpDa6K"
 			]
 		},
 		"Doctor.sol": {

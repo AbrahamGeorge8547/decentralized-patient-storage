@@ -277,6 +277,25 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getDiseaseById",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
@@ -318,6 +337,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "patientAddDisease",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -414,31 +446,31 @@
 	},
 	"sources": {
 		"Admin.sol": {
-			"keccak256": "0xa42a3e523ec9bdec3766cad9d9cdcdb211653cde795491e32780b98879dc7c30",
+			"keccak256": "0xdaed2b0aa8476a1c33b6a1b0a7fa8d4a78943d004f6d57eec601b2f5c8935718",
 			"urls": [
-				"bzz-raw://16a42d9cd484d3349ac9e2a50e7e57d2dd4e8a931a2b6aff1cf3cada0c3bb629",
-				"dweb:/ipfs/QmbwKv5AgpPevpjG3s6dKHaFaZ5xiUdoN9ZgM7RKcikbco"
+				"bzz-raw://eeebdc9a5d841fb363be15cfa8ced68155a83c6322c8e99849cac8bb0fa3c80e",
+				"dweb:/ipfs/QmbgB6DuAR9Yn8CD5TTeWeKBjV8YE7MnDMaCD8n6wtsmtY"
 			]
 		},
 		"Doctor.sol": {
-			"keccak256": "0x73ba74b9bcfe9455bf90e19e3f06399fac4bf557269daa580c92264936223a84",
+			"keccak256": "0x349e9ba58a75fb92fef8687e89a9b79b2a318e142d5c7bd61cd7240607f78324",
 			"urls": [
-				"bzz-raw://483f6245101fa437d24b2f1e676432d268e87ce071c851b8de34f61280dd2269",
-				"dweb:/ipfs/QmUQVe2LKc6xkcUdWZeFdRoritRiokr9QsspCxiiBS5oKU"
+				"bzz-raw://602bc76b1a59fb2bbdab264e163c465da3f94afbc5c79ec3f3f2e420da7f6676",
+				"dweb:/ipfs/QmVVART3hATVQfp4Pw4YD5WPxccCa7UhAG9HHueCXkURSz"
 			]
 		},
 		"MedicalRecords.sol": {
-			"keccak256": "0x128d6cc1b028405f8e463e494273550bc0aaf09da931abaa2cf5d5a22b97325f",
+			"keccak256": "0x2658693593251eb4aca89bb8c9b750d986be07630af7791fa7e66cf5b2e78afb",
 			"urls": [
-				"bzz-raw://1bb776500bb96a8117c396d82725bee9686cee8a7ba4bc4ce5a9b3303069e735",
-				"dweb:/ipfs/QmQm3fmZBA9f1zka8kNvD9VePLRDwawcmAA4Zm6k5HyMv8"
+				"bzz-raw://21180a0689e4e4f561d2a4d16b56a9ce4247897cf2cdc47bbc7f58c97a3f4133",
+				"dweb:/ipfs/Qma6fCC4TTMLFb5M9H6f4XgohQNjbWAk3uXyVEL6DqCb96"
 			]
 		},
 		"Patient.sol": {
-			"keccak256": "0xb48bf9b6fa06a979b096d18db5a6a1cd258c290051b5574494b7ddc2de179613",
+			"keccak256": "0xf526fce7d494fbcc15573eca07bebb0dbf0c5a6e9270eb5e3b763875499a9c17",
 			"urls": [
-				"bzz-raw://2786cde7c14163976b59c0204a4683d4dae05709a7838fbe42c733929b5809f5",
-				"dweb:/ipfs/QmTyx9J5nJviK22cCskS5ipgXQzeJc7hTWHZ6F3fqZ6MWi"
+				"bzz-raw://48c38dd2cc66a254b653425f4fc76270d2d530fead7b8b87f8137759fbfe7895",
+				"dweb:/ipfs/QmUY74VdAtgDu4nmZNKdaWCv1AQYaJHM55ofqCNrH485uP"
 			]
 		}
 	},

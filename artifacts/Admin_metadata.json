@@ -31,9 +31,9 @@
 						"type": "string"
 					},
 					{
-						"internalType": "string[]",
-						"name": "_doses",
-						"type": "string[]"
+						"internalType": "string",
+						"name": "_dose",
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -44,6 +44,25 @@
 				"name": "addMedicine",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "checkMedicineExists",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -115,46 +134,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "getAllMedicines",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "uint256",
-								"name": "id",
-								"type": "uint256"
-							},
-							{
-								"internalType": "string",
-								"name": "name",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "expiryDate",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "price",
-								"type": "string"
-							},
-							{
-								"internalType": "string[]",
-								"name": "doses",
-								"type": "string[]"
-							}
-						],
-						"internalType": "struct Admin.Medicine[]",
-						"name": "",
-						"type": "tuple[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "getAllWorkplaces",
 				"outputs": [
 					{
@@ -201,6 +180,40 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getMedicine",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "expiryDate",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "dose",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "price",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
@@ -225,6 +238,11 @@
 					{
 						"internalType": "string",
 						"name": "price",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "dose",
 						"type": "string"
 					}
 				],
@@ -284,10 +302,11 @@
 	},
 	"sources": {
 		"Admin.sol": {
-			"keccak256": "0xdaed2b0aa8476a1c33b6a1b0a7fa8d4a78943d004f6d57eec601b2f5c8935718",
+			"keccak256": "0x4e974984b48b71ca7b5c4cd2a2317e1b3e0ae15532082023dee551ec41615cd9",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://eeebdc9a5d841fb363be15cfa8ced68155a83c6322c8e99849cac8bb0fa3c80e",
-				"dweb:/ipfs/QmbgB6DuAR9Yn8CD5TTeWeKBjV8YE7MnDMaCD8n6wtsmtY"
+				"bzz-raw://2350c8851ec2c53a846163b358c0155ccebde6e6d4ed343c882b6e2759205051",
+				"dweb:/ipfs/QmdjYUyEqJPsnrg2GthAQbA7xyEjoBq7dHijD6UgaFuKvS"
 			]
 		}
 	},

@@ -6,6 +6,24 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "pAddr",
+						"type": "address"
+					}
+				],
+				"name": "addMedicineToPatient",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "getAllPatients",
 				"outputs": [
@@ -37,9 +55,9 @@
 								"type": "string[]"
 							},
 							{
-								"internalType": "string[]",
+								"internalType": "uint256[]",
 								"name": "medicines",
-								"type": "string[]"
+								"type": "uint256[]"
 							},
 							{
 								"internalType": "string[]",
@@ -210,10 +228,11 @@
 	},
 	"sources": {
 		"Patient.sol": {
-			"keccak256": "0xf526fce7d494fbcc15573eca07bebb0dbf0c5a6e9270eb5e3b763875499a9c17",
+			"keccak256": "0xc1360228d92b6b775e87b4f4c967c42b6cb463c5c5d7f3cd6d2f29375e54b507",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://48c38dd2cc66a254b653425f4fc76270d2d530fead7b8b87f8137759fbfe7895",
-				"dweb:/ipfs/QmUY74VdAtgDu4nmZNKdaWCv1AQYaJHM55ofqCNrH485uP"
+				"bzz-raw://0e7d3499eb44a52888627b5842ca98ec3aa0806c88b009db0de2b34f453d7947",
+				"dweb:/ipfs/QmSqWcW5sCFFbaFRCHnYR2rQxKhUJL4PZS6JSAn5k94uPy"
 			]
 		}
 	},
